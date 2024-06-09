@@ -8,7 +8,7 @@
   },
   "name": "webshop",
   "version": "1.0.0",
-  "main": "node.js",
+  "main": "./assets/js/node.js",
   "directories": {
     "test": "test"
   },

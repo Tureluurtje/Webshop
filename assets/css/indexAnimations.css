@@ -239,3 +239,7 @@ nav ul li a:hover {
       font-size: 0; /* Ensure text remains hidden */
   }
 }
+
+#home {
+  margin-bottom: -10px;
+}
