@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jouw Website</title>
+    <!-- Voeg hier je CSS- en JavaScript-links toe -->
+    <style>
+        /* Basisstijl voor de preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff; /* Kies hier een achtergrondkleur voor de preloader */
+            z-index: 9999; /* Zorg ervoor dat de preloader bovenaan wordt weergegeven */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Optioneel: stijl voor het laadicoon of de animatie */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Verberg de preloader wanneer de inhoud is geladen */
+        .loaded .preloader {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- De preloader -->
+    <div class="preloader">
+        <!-- Plaats hier je laadicoon of animatie -->
+        <!-- Bijvoorbeeld: -->
+        <div class="loader"></div>
+    </div>
+
+    <!-- De daadwerkelijke inhoud van je pagina -->
+    <div class="content">
+        <!-- Voeg hier je pagina-inhoud toe -->
+        <p>hallo</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        // Voeg de "loaded"-klasse toe aan het body-element
+        document.body.classList.add("loaded");
+        });
+
+    </script>
+    <!-- Voeg hier je JavaScript-bestand toe -->
+</body>
+</html>

@@ -1,0 +1,55 @@
+.preloader {
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: visibility 0.5s ease-out;
+}
+
+.indeterminate-progress-bar {
+  background-color: #fff;
+  border-radius: 9999px;
+  height: 5px;
+  width: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.indeterminate-progress-bar__progress {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 50%;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: indeterminate-progress-bar;
+}
+
+@keyframes indeterminate-progress-bar {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.loaded .preloader {
+  visibility: hidden;
+}

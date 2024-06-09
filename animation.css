@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #3586ff;
+}
+
+section .air {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+  background-size: 1000px 100px;
+}
+
+section .air.air1 {
+  animation: wave 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+section .air.air2 {
+  animation: wave2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+
+section .air.air3 {
+  animation: wave 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+
+section .air.air4 {
+  animation: wave2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+.white{
+  background-color: white;
+}
+
+main {
+  flex: 1;
+  position: relative;
+  z-index: 0;
+  flex-grow: 1;
+}
+
+header {
+  color: black;
+  text-align: left;
+  border: 0;
+  box-shadow: inset 0 0 0 1px transparent;
+  position: relative;
+  vertical-align: middle;
+  z-index: 1001; /* Ensure header is above bubbles */
+  transition: top 0.5s, position 0.5s;
+}
+#header{
+  background-color: white;
+}
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  background: none;
+  margin: 1em 0;
+  padding-right: 1em 2em;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1001; /* Ensure nav is above bubbles */
+  position: relative;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+}
+.hidden{
+  display: none;
+  transition: 0.5s;
+}
+nav h2 {
+  padding-left: 2%;
+}
+
+nav ul {
+  height: 30px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
+  padding: 0 20px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 6px;
+  transition-duration: 0.5s;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a:hover {
+  font-size: 16px;
+  outline: none;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #031D44;
+  margin: 0 5px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.nav-link img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+
+.bubble {
+  position: absolute;
+  background-color: #add8e6;
+  border-radius: 50%;
+  opacity: 0.7;
+  bottom: -10%; /* Start at the bottom of the main container */
+  z-index: 1001;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+      opacity: 0.7;
+  }
+  80% {
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-300vh); /* Float through all sections */
+      opacity: 0;
+  }
+}
+
+/* Specific bubble animations for varying speeds */
+.bubble1 {
+  animation: float 15s linear infinite;
+}
+
+.bubble2 {
+  animation: float 18s linear infinite;
+}
+
+.bubble3 {
+  animation: float 21s linear infinite;
+}
+
+.bubble4 {
+  animation: float 24s linear infinite;
+}
+
+.bubble5 {
+  animation: float 27s linear infinite;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+  nav h2 {
+      font-size: 18px;
+  }
+
+  nav ul li a {
+      font-size: 0; /* Hide text */
+      padding: 8px; /* Adjust padding */
+  }
+
+  nav ul li a img {
+      margin-right: 0; /* Remove margin */
+  }
+
+  nav ul li a:hover {
+      font-size: 0; /* Ensure text remains hidden on hover */
+  }
+
+  .hover, .hover:hover {
+      font-size: 0; /* Ensure text remains hidden */
+  }
+}

@@ -1,0 +1,32 @@
+.example { background-image: url("test_photo_1.jpeg");
+    height: 400px;
+    
+    
+    /* Create a parallax effect */
+    
+    
+    background-attachment: fixed;
+    
+    
+    background-position: center;
+    
+    
+    background-repeat: no-repeat;
+    
+    
+    background-size: cover; }
+@media only screen and (max-device-width: 1366px) {
+
+
+    .example {
+    
+    
+    background-attachment: scroll;
+    
+    
+    }
+    
+    
+}
+    
+    

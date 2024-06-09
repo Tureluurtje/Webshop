@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Webshop</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navigationstyle.css">
+  <link rel="stylesheet" href="loading.css">
+  <link rel="stylesheet" href="animation.css">
+  <script>
+    window.addEventListener('load', function() {
+      var preloader = document.querySelector('.preloader');
+      preloader.style.display = 'none';
+    });
+  </script>
+</head>
+<body>
+  <div class="preloader">
+    <div class="indeterminate-progress-bar">
+      <div class="indeterminate-progress-bar__progress"></div>
+    </div>
+  </div>
+  <div id="scrollProgressContainer">
+    <svg class="progress-ring" viewBox="0 0 100 100">
+      <circle class="progress-circle" cx="50" cy="50" r="45"></circle>
+      <circle class="progress-fill" cx="50" cy="50" r="45"></circle>
+    </svg>
+    <button id="scrollToTopBtn"><ion-icon name="arrow-up-outline"></ion-icon></button>
+  </div>
+  <div id="content-wrapper">
+    <div class="draw" id="navbar">
+      <header>
+        <nav>
+          <h2><b>Welcome</b></h2>
+          <ul>
+            <li><a href="./index.html" class="nav-link nav-link-ltr hover"><img src="./img/home-button.svg" alt="Home"> Home</a></li>
+            <li><a href="#section3" class="nav-link nav-link-ltr hover"><img src="./img/bascet.svg" alt="Basket"> Products</a></li>
+            <li><a href="./Contact/index.html" class="nav-link nav-link-ltr hover"><img src="./img/mail.svg" alt="Mail"> Contact</a></li>
+            <li><a href="./sign-up/sign-up.html" class="nav-link nav-link-ltr hover"><img src="./img/user.svg" alt="User">Log in</a></li>
+          </ul>
+        </nav>
+        <div class="context"></div>
+      </header>
+    </div>
+    <main>
+      <section id="home">
+        <h1><b>Welcome</b></h1>
+        <div class="air air1"></div>
+        <div class="air air2"></div>
+        <div class="air air3"></div>
+        <div class="air air4"></div>
+      </section>
+      <section id="section1" class="white">
+        <h2>Section 1</h2>
+        <p>This is the content of Section 1.</p>
+      </section>
+      <section id="section2">
+        <div class="container2">
+          <h2 class="headline">Our Services</h2>
+          <div class="one-third column alpha">
+            <div class="feature">
+              <div class="feature-circle blue"><img src="./img/speedIcon.svg" alt="Speed Icon"></div>
+              <div class="feature-description"> 
+                <h3>Speed</h3>
+                <p class="text">We create your project<br> in max 4 weeks.</p>
+              </div>
+            </div>
+          </div>
+          <div class="one-third column alpha">
+            <div class="feature">
+              <div class="feature-circle blue"><img src="./img/pricing.svg" alt="Pricing Icon"></div>
+              <div class="feature-description"> 
+                <h3>Finance</h3>
+                <p class="text">Talking about the price<br>is possible.</p>
+              </div>
+            </div>
+          </div>
+          <div class="one-third column alpha">
+            <div class="feature">
+              <div class="feature-circle blue"><img src="./img/ClientIcon.svg" alt="Client Icon"></div>
+              <div class="feature-description"> 
+                <h3>Client</h3>
+                <p class="text">Lots of conversations<br> with the client.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section3">
+        <h2>Pricing</h2>
+        <div class="columns">
+          <ul class="price">
+            <li class="header">Small</li>
+            <li class="grey">$25.00 / 3$/hour</li>
+            <li>5 Pages</li>
+            <li>1000 Words</li>
+            <li class="grey"><a href="#" class="button1">Buy</a></li>
+          </ul>
+        </div>
+        <div class="columns">
+          <ul class="price">
+            <li class="header" style="background-color: #04aa6d">Normal</li>
+            <li class="grey">$50.00 / 3$/hour</li>
+            <li>8 Pages</li>
+            <li>2000 Words</li>
+            <li class="grey"><a href="#" class="button1">Buy</a></li>
+          </ul>
+        </div>
+        <div class="columns">
+          <ul class="price">
+            <li class="header">Large</li>
+            <li class="grey">$100.00 / 3$/hour</li>
+            <li>15 Pages</li>
+            <li>4000 Words</li>
+            <li class="grey"><a href="#" class="button1">Buy</a></li>
+          </ul>
+        </div>  
+        <div class="bubble bubble1" style="left: 10%; width: 30px; height: 30px;"></div>
+        <div class="bubble bubble2" style="left: 20%; width: 20px; height: 20px;"></div>
+        <div class="bubble bubble3" style="left: 60%; width: 40px; height: 40px;"></div>
+        <div class="bubble bubble4" style="left: 40%; width: 25px; height: 25px;"></div>
+        <div class="bubble bubble5" style="left: 80%; width: 35px; height: 35px;"></div>
+
+      </section>
+      <div class="wavie" class="waves-container">
+        <div class="wavie" id="wavie1"></div>
+        <div class="wavie" id="wavie2"></div>
+        <div class="wavie" id="wavie3"></div>
+        <div class="wavie" id="wavie4"></div>
+      </div>
+      <footer>
+        <ul class="social-icon">
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+        </ul>
+        <ul class="menu">
+          <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+        </ul>
+        <p>&copy;2024 Arthur Kwak | All Rights Reserved</p>
+      </footer>
+    </main>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    const scrollProgressElement = document.getElementById('scrollProgressContainer');
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    window.addEventListener('scroll', updateScrollProgress);
+    window.addEventListener('load', hideProgressOnLoad);
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+
+    function hideProgressOnLoad() {
+      scrollProgressElement.style.display = 'none'; 
+    }
+
+    function updateScrollProgress() {
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.body.clientHeight - windowHeight;
+      const scrollProgress = (window.scrollY / fullHeight) * 100;
+      scrollProgressElement.style.setProperty('--progress', scrollProgress);
+    }
+    function changeNavbarOnScroll() {
+      const navbar = document.querySelector('#navbar');
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        const scrollPercentage = (scrollPosition / totalHeight) * 100;
+
+        if (scrollPercentage >= 50) {
+          navbar.classList.add('hidden');
+        } else {
+          navbar.classList.remove('hidden');
+        }
+
+        if (scrollPercentage >= 50) {
+          navbar.classList.add('transition-to-top');
+        } else {
+          navbar.classList.remove('transition-to-top');
+        }
+      });
+    }
+
+    changeNavbarOnScroll();
+
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

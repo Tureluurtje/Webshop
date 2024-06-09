@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css"/>
+    <title>My Project</title>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div class="head">
+            <span class="openbtn" id="navbtn" onclick="openNav(); closeNav(); ">☰</span>
+            <p> Do Re Mi Fa So Laa</p>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="openbtn" onclick="closeNav()">☰xx</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+</body>

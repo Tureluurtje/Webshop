@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../loading.css">
+    <title>sign in/up</title>
+    <script>
+        window.addEventListener('load', function() {
+          var preloader = document.querySelector('.preloader');
+          preloader.style.display = 'none';
+        });
+    </script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="indeterminate-progress-bar">
+          <div class="indeterminate-progress-bar__progress"></div>
+        </div>
+      </div>
+
+    <div class="containerr" id="containerr">
+        <div class="form-container sign-up-container" id="sign-up-container">
+            <form action="sign-up.php" method="post">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name" name="txtName"/>
+                <input type="email" placeholder="Email" name="txtEmail"/>
+                <input type="password" placeholder="Password" name="txtPassword"/>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container" id="sign-in-container">
+            <form action="sign-in.php" method="post" id="login-form">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" id="email" placeholder="email" name="txtEmail"/>
+                <input type="password" id="password" placeholder="Password" name="txtPassword"/>
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const username = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+    
+          const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+          });
+    
+          if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('token', data.token);
+        window.location.href = ('../../index.html');
+      } else {
+        alert('Login failed');
+      }
+    });    
+        document.getElementById('fetch-data').addEventListener('click', async () => {
+          const token = localStorage.getItem('token');
+    
+          const response = await fetch('/protected', {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+    
+          if (response.ok) {
+            const data = await response.json();
+            document.getElementById('result').innerHTML = `
+              <h2>Protected Data</h2>
+              <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+          } else {
+            document.getElementById('result').textContent = 'Failed to fetch protected data';
+          }
+        });
+      </script>
+    </body>
+</html>
